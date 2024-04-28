@@ -14,16 +14,16 @@ const pgPool = new pg.Pool({
   connectionString: process.env.POSTGRES_URI
 });
 app.use(cors({
-    credentials: true, // to support session cookies
-    origin: 'http://localhost:3000' // or wherever your frontend is hosted
+    credentials: true,
+    origin: 'http://localhost:3000' 
 }));
 app.use(express.json());
 app.use(session({
   store: new PGSession({
-    pool: pgPool,                // Connection pool
-    tableName: 'session'        // Use another table name for storing sessions
+    pool: pgPool,               
+    tableName: 'session'        
   }),
-  secret: '1234',              // Secret used to sign the session ID cookie
+  secret: '1234',              
   resave: false,
   saveUninitialized: false,
   cookie: { secure: false, maxAge: 5 * 60 * 1000 } // 30 days
