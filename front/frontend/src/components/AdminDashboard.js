@@ -9,7 +9,7 @@ function AdminDashboard() {
         axios.get('http://localhost:5000/api/admin/users')
             .then(response => {
                 setUsers(response.data);
-                setError('');  // Efface les erreurs précédentes en cas de succès
+                setError('');
             })
             .catch(error => {
                 console.error('Error fetching users:', error);
