@@ -11,7 +11,7 @@ function Registration() {
         try {
             const response = await axios.post('http://localhost:5000/register', { username, password });
             setMessage('Registration successful: Please login');
-            const userId = response.data.userId; // Assuming the response contains the userId
+            const userId = response.data.userId;
             localStorage.setItem('userId', userId);
         } catch (error) {
             setMessage('Failed to register: ' + (error.response?.data || error.message));
