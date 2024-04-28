@@ -29,7 +29,7 @@ function Profile() {
                 setError('Error fetching profile: ' + error.message);
                 setIsLoading(false);
             });
-    }, [query.get("id")]); // Utilisez directement `userId` comme dépendance
+    }, [query.get("id")]);
 
     if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
