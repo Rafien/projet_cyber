@@ -12,7 +12,7 @@ function Login() {
             const response = await axios.post('http://localhost:5000/login', { username, password });
             console.log(response)
             setMessage('Login successful: ' + response.data.userId);
-            const userId = response.data.userId; // Assuming the response contains the userId
+            const userId = response.data.userId;
             localStorage.setItem('userId', userId);
         } catch (error) {
             setMessage('Failed to login: ' + (error.response?.data || error.message));
