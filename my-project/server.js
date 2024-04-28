@@ -46,21 +46,21 @@ const createUserTable = async () => {
     client.release();
   }
 };
-// const addUsers = async () => {
-//   const username = 'admin';
-//     hashedPassword = bcrypt.hash('admin', 10)
-//   const client = await pgPool.connect();
-//   try {
+const addUsers = async () => {
+   const username = 'admin';
+     hashedPassword = bcrypt.hash('admin', 10)
+   const client = await pgPool.connect();
+   try {
     
-//     await client.query('INSERT INTO users(username, password) VALUES($1, $2) RETURNING id', [username, hashedPassword]);
-//   } finally {
-//     client.release();
-//   }
+     await client.query('INSERT INTO users(username, password) VALUES($1, $2) RETURNING id', [username, hashedPassword]);
+   } finally {
+     client.release();
+   }
 
-// }
+}
 
 createUserTable();
-// addUsers();
+addUsers();
 
 // Routes
 app.post('/register', async (req, res) => {
