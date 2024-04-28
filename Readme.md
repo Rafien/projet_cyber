@@ -35,11 +35,10 @@ Id stocké en Brut en localStorage
         passer par un JWT  
 
 Enlevé car j'arrive pas a le rendre non-protégé sans enlever le check de mots de passe encodé  
-<!-- SQL injection on login
-    Faille:
-        Injection possible pour recup le compte admin
-    Fix :
-        Changer la requete pour :
-        'SELECT id, password FROM users WHERE username = $1', [username]' 
-        
-        Ajouter une verification de mots de passe : const isMatch = await bcrypt.compare(password, user.password);-->
+SQL injection on login  
+    Faille:  
+        Injection possible pour recup le compte admin  
+    Fix :  
+        Changer la requete pour :  
+        'SELECT id, password FROM users WHERE username = $1', [username]'   
+        Ajouter une verification de mots de passe : const isMatch = await bcrypt.compare(password, user.password)
